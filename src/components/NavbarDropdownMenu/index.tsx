@@ -29,7 +29,7 @@ export default function NavbarDropdownMenu() {
             >
               <Menu.Items className=" bg-amber-950 min-h-screen justify-center items-center z-50">
                 <div className="w-full flex-col justify-center items-center">
-                  <Image src={`/logo.svg`} width={480} height={480} alt="vaqueiro montado no cavalo derrubando o boi segurando-o pelo rabo" className={`cursor-none mx-auto`} priority />
+                  <Image src={`/logo.svg`} width={300} height={300} alt="vaqueiro montado no cavalo derrubando o boi segurando-o pelo rabo" className={`cursor-none mx-auto`} priority />
 
                   <Menu.Item>
                     {({ active }) => (
