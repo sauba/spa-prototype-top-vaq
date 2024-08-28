@@ -3,7 +3,6 @@ import { bois } from "@/utils/bois";
 import { cavalos } from "@/utils/cavalos";
 import { haras } from "@/utils/haras";
 import { vaqueiros } from "@/utils/vaqueiros";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import "./styles.css";
 
@@ -58,7 +57,6 @@ export default function In() {
 
 
       <div className={`w-full flex-col`}>
-        <FontAwesomeIcon icon={faHorse} />
         <h1 className={`text-center text-3xl xl:text-8xl pt-32 pb-4 font-allura`}>Cavalos</h1>
 
         <div className={`w-full grid grid-cols-5 justify-center items-center gap-1`}>
