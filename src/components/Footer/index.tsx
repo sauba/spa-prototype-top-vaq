@@ -12,7 +12,7 @@ export default function Footer() {
         <span
           className={`text-4xl lg:text-6xl text-center tracking-widest font-allura text-zinc-100 pt-16`}
         >
-          TOP-VAC
+          TOP-VAQ
         </span>
 
         <span

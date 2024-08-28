@@ -56,8 +56,8 @@ export default function NavbarDropdownMenu() {
                              xl:text-3xl
                            `}
                         >
-                          <House size={32} weight="bold" className={`text-zinc-200`} />
-                          <p className={``}>Início</p>
+                          <House size={32} weight="bold" className={`text-zinc-100`} />
+                          <p className={`text-zinc-100`}>Início</p>
                         </a>
                       </div>
                     )}
