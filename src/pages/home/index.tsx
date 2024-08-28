@@ -22,7 +22,7 @@ export default function Home() {
         <div className={`w-full grid grid-cols-2 xl:grid-cols-5 justify-center items-center gap-1`}>
           {
             boisList.map((boi, index) => (
-              <div key={index} className={`w-96 h-96 rounded-lg card bg-gradient-to-bl from-amber-400 to-amber-700 to-70% p-4 mx-auto`}>
+              <div key={index} className={`w-80 h-80 rounded-lg card bg-gradient-to-bl from-amber-400 to-amber-700 to-70% p-4 mx-auto`}>
                 <Image src={`/boiPerfil.png`} width={132} height={200} alt="" className={`mx-auto hover:transition-transform hover:scale-125 hover:py-4`} />
                 <p>Nome: {boi.nome}</p>
                 <p>Apelido: {boi.nomeFantasia}</p>
@@ -41,7 +41,7 @@ export default function Home() {
         <div className={`w-full grid grid-cols-2 xl:grid-cols-5 justify-center items-center gap-1`}>
           {
             vaqueirosList.map((vaqueiro, index) => (
-              <div key={index} className={`w-96 h-96 rounded-lg card bg-gradient-to-bl from-amber-400 to-amber-700 to-70% p-4 mx-auto`}>
+              <div key={index} className={`w-80 h-80 rounded-lg card bg-gradient-to-bl from-amber-400 to-amber-700 to-70% p-4 mx-auto`}>
                 <Image src={`/vaqueiroPerfil.png`} width={132} height={200} alt="" className={`mx-auto hover:transition-transform hover:scale-125 hover:py-4`} />
                 <p>Nome: {vaqueiro.nome}</p>
                 <p>Apelido: {vaqueiro.nomeFantasia}</p>
@@ -61,7 +61,7 @@ export default function Home() {
         <div className={`w-full grid grid-cols-2 xl:grid-cols-5 justify-center items-center gap-1`}>
           {
             cavalosList.map((cavalo, index) => (
-              <div key={index} className={`w-96 h-96 rounded-lg card bg-gradient-to-bl from-amber-400 to-amber-700 to-70% p-4 mx-auto`}>
+              <div key={index} className={`w-80 h-80 rounded-lg card bg-gradient-to-bl from-amber-400 to-amber-700 to-70% p-4 mx-auto`}>
                 <Image src={`/caracavalo.png`} width={132} height={200} alt="" className={`mx-auto hover:transition-transform hover:scale-125 hover:py-4`} />
                 <p>Nome: {cavalo.nome}</p>
                 <p>Apelido: {cavalo.nomeFantasia}</p>
@@ -80,7 +80,7 @@ export default function Home() {
         <div className={`w-full grid grid-cols-2 xl:grid-cols-5 justify-center items-center gap-1`}>
           {
             harasList.map((haras, index) => (
-              <div key={index} className={`w-96 h-96 rounded-lg card bg-gradient-to-bl from-amber-400 to-amber-700 to-70% p-4 mx-auto`}>
+              <div key={index} className={`w-80 h-80 rounded-lg card bg-gradient-to-bl from-amber-400 to-amber-700 to-70% p-4 mx-auto`}>
                 <p>Nome: {haras.nome}</p>
                 <p>Local: {haras.local}</p>
                 <p>Estado: {haras.estado}</p>
