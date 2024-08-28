@@ -1,4 +1,4 @@
-[
+export const cavalos = [
   {
     "nome": "Cavalo Foguete",
     "nomeFantasia": "Foguete",

@@ -1,4 +1,4 @@
-[
+export const bois = [
   {
     "nome": "boi cabeçudo",
     "nomeFantasia": "cabeçudo",

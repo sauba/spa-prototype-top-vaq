@@ -1,4 +1,4 @@
-[
+export const haras = [
   {
     "nome": "Cavalo Foguete",
     "local": "Foguete",

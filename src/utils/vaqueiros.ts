@@ -1,4 +1,4 @@
-[
+export const vaqueiros = [
   {
     "nome": "Caretano Veloso",
     "nomeFantasia": "Caretano",
