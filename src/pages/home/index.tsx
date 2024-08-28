@@ -3,13 +3,14 @@ import { bois } from "@/utils/bois";
 import { cavalos } from "@/utils/cavalos";
 import { haras } from "@/utils/haras";
 import { vaqueiros } from "@/utils/vaqueiros";
+import { Farm } from "@phosphor-icons/react";
 import Image from "next/image";
+
 export default function Home() {
   const boisList = bois
   const vaqueirosList = vaqueiros
   const cavalosList = cavalos
   const harasList = haras
-
 
   return (
     <div className={`w-full min-h-screen mx-auto flex flex-col justify-center items-center bg-amber-950 text-zinc-100 font-pt-mono`}>
@@ -81,6 +82,7 @@ export default function Home() {
           {
             harasList.map((haras, index) => (
               <div key={index} className={`w-80 h-80 rounded-lg card bg-gradient-to-bl from-amber-400 to-amber-700 to-70% p-4 mx-auto`}>
+                <Farm size={32} />
                 <p>Nome: {haras.nome}</p>
                 <p>Local: {haras.local}</p>
                 <p>Estado: {haras.estado}</p>
