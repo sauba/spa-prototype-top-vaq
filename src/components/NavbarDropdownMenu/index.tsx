@@ -1,6 +1,7 @@
 import { Menu, Transition } from "@headlessui/react"
 import { Barn, Cow, Horse, House, ListBullets, Phone, SignIn, UserCircle } from "@phosphor-icons/react"
 import Image from "next/image"
+import Link from "next/link"
 import { Fragment } from "react"
 
 export default function NavbarDropdownMenu() {
@@ -44,7 +45,7 @@ export default function NavbarDropdownMenu() {
                           }
                          `}
                       >
-                        <a
+                        <Link
                           href="/"
                           className={`
                              flex
@@ -58,7 +59,7 @@ export default function NavbarDropdownMenu() {
                         >
                           <House size={32} weight="bold" className={`text-zinc-100`} />
                           <p className={`text-zinc-100`}>Início</p>
-                        </a>
+                        </Link>
                       </div>
                     )}
                   </Menu.Item>
@@ -77,7 +78,7 @@ export default function NavbarDropdownMenu() {
                           }
                          `}
                       >
-                        <a
+                        <Link
                           href="#bois"
                           className={`
                              flex
@@ -91,7 +92,7 @@ export default function NavbarDropdownMenu() {
                         >
                           <Cow size={32} weight="bold" className={`text-zinc-200`} />
                           <p className={``}>Bois</p>
-                        </a>
+                        </Link>
                       </div>
                     )}
                   </Menu.Item>
@@ -110,7 +111,7 @@ export default function NavbarDropdownMenu() {
                           }
                          `}
                       >
-                        <a
+                        <Link
                           href="#haras"
                           className={`
                              flex
@@ -124,7 +125,7 @@ export default function NavbarDropdownMenu() {
                         >
                           <Barn size={32} weight="bold" className={`text-zinc-200`} />
                           <p className={``}>Haras</p>
-                        </a>
+                        </Link>
                       </div>
                     )}
                   </Menu.Item>
@@ -143,7 +144,7 @@ export default function NavbarDropdownMenu() {
                           }
                          `}
                       >
-                        <a
+                        <Link
                           href="#vaqueiros"
                           className={`
                              flex
@@ -157,7 +158,7 @@ export default function NavbarDropdownMenu() {
                         >
                           <UserCircle size={32} weight="bold" className={`text-zinc-200`} />
                           <p className={``}>Vaqueiros</p>
-                        </a>
+                        </Link>
                       </div>
                     )}
                   </Menu.Item>
@@ -176,7 +177,7 @@ export default function NavbarDropdownMenu() {
                           }
                          `}
                       >
-                        <a
+                        <Link
                           href="#cavalos"
                           className={`
                              flex
@@ -191,7 +192,7 @@ export default function NavbarDropdownMenu() {
                         >
                           <Horse size={32} weight="bold" className={`text-zinc-200`} />
                           <p className={``}>Cavalos</p>
-                        </a>
+                        </Link>
                       </div>
                     )}
                   </Menu.Item>
@@ -209,7 +210,7 @@ export default function NavbarDropdownMenu() {
                           }
                          `}
                       >
-                        <a
+                        <Link
                           href="#contato"
                           className={`
                              flex
@@ -223,7 +224,7 @@ export default function NavbarDropdownMenu() {
                         >
                           <Phone size={32} weight="bold" className={`text-zinc-200`} />
                           <p className={``}>Contato</p>
-                        </a>
+                        </Link>
                       </div>
                     )}
                   </Menu.Item>
@@ -241,7 +242,7 @@ export default function NavbarDropdownMenu() {
                           }
                          `}
                       >
-                        <a
+                        <Link
                           href="/session"
                           className={`
                              flex
@@ -256,7 +257,7 @@ export default function NavbarDropdownMenu() {
                         >
                           <SignIn size={32} weight="bold" className={`text-zinc-200`} />
                           <p className={``}>Entrar</p>
-                        </a>
+                        </Link>
                       </div>
                     )}
                   </Menu.Item>
