@@ -242,7 +242,7 @@ export default function NavbarDropdownMenu() {
                          `}
                       >
                         <a
-                          href="#"
+                          href="/session"
                           className={`
                              flex
                              justify-center
