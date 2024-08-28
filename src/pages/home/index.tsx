@@ -19,10 +19,10 @@ export default function Home() {
       <div className={`bois w-full flex-col`} id="bois">
         <h1 className={`text-center text-3xl xl:text-8xl pt-32 pb-4 font-allura`}>Bois</h1>
 
-        <div className={`w-full grid grid-cols-5 justify-center items-center gap-1`}>
+        <div className={`w-full grid grid-cols-2 xl:grid-cols-5 justify-center items-center gap-1`}>
           {
             boisList.map((boi, index) => (
-              <div key={index} className={`card bg-gradient-to-bl from-amber-400 to-amber-700 to-70% p-4`}>
+              <div key={index} className={`w-96 h-96 rounded-lg card bg-gradient-to-bl from-amber-400 to-amber-700 to-70% p-4 mx-auto hover:transition-transform hover:scale-110`}>
                 <Image src={`/boiPerfil.png`} width={132} height={200} alt="" className={`mx-auto`} />
                 <p>Nome: {boi.nome}</p>
                 <p>Apelido: {boi.nomeFantasia}</p>
@@ -38,10 +38,10 @@ export default function Home() {
       <div className={`vaqueiros w-full flex-col`} id="vaqueiros">
         <h1 className={`text-center text-3xl xl:text-8xl pt-32 pb-4 font-allura`}>Vaqueiros</h1>
 
-        <div className={`w-full grid grid-cols-5 justify-center items-center gap-1`}>
+        <div className={`w-full grid grid-cols-2 xl:grid-cols-5 justify-center items-center gap-1`}>
           {
             vaqueirosList.map((vaqueiro, index) => (
-              <div key={index} className={`card bg-gradient-to-bl from-amber-400 to-amber-700 to-70% p-4`}>
+              <div key={index} className={`w-96 h-96 rounded-lg card bg-gradient-to-bl from-amber-400 to-amber-700 to-70% p-4 mx-auto hover:transition-transform hover:scale-110`}>
                 <Image src={`/vaqueiroPerfil.png`} width={132} height={200} alt="" className={`mx-auto`} />
                 <p>Nome: {vaqueiro.nome}</p>
                 <p>Apelido: {vaqueiro.nomeFantasia}</p>
@@ -58,10 +58,10 @@ export default function Home() {
       <div className={`cavalos w-full flex-col`} id="cavalos">
         <h1 className={`text-center text-3xl xl:text-8xl pt-32 pb-4 font-allura`}>Cavalos</h1>
 
-        <div className={`w-full grid grid-cols-5 justify-center items-center gap-1`}>
+        <div className={`w-full grid grid-cols-2 xl:grid-cols-5 justify-center items-center gap-1`}>
           {
             cavalosList.map((cavalo, index) => (
-              <div key={index} className={`card bg-gradient-to-bl from-amber-400 to-amber-700 to-70% p-4`}>
+              <div key={index} className={`w-96 h-96 rounded-lg card bg-gradient-to-bl from-amber-400 to-amber-700 to-70% p-4 mx-auto hover:transition-transform hover:scale-110`}>
                 <Image src={`/caracavalo.png`} width={132} height={200} alt="" className={`mx-auto`} />
                 <p>Nome: {cavalo.nome}</p>
                 <p>Apelido: {cavalo.nomeFantasia}</p>
@@ -77,10 +77,10 @@ export default function Home() {
       <div className={`haras w-full flex-col`} id="haras">
         <h1 className={`text-center text-3xl xl:text-8xl pt-32 pb-4 font-allura`}>Haras</h1>
 
-        <div className={`w-full grid grid-cols-5 justify-center items-center gap-1`}>
+        <div className={`w-full grid grid-cols-2 xl:grid-cols-5 justify-center items-center gap-1`}>
           {
             harasList.map((haras, index) => (
-              <div key={index} className={`card bg-gradient-to-bl from-amber-400 to-amber-700 to-70% p-4`}>
+              <div key={index} className={`w-96 h-96 rounded-lg card bg-gradient-to-bl from-amber-400 to-amber-700 to-70% p-4 mx-auto hover:transition-transform hover:scale-110`}>
                 <p>Nome: {haras.nome}</p>
                 <p>Local: {haras.local}</p>
                 <p>Estado: {haras.estado}</p>
