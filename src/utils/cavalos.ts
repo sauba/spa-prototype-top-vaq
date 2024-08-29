@@ -4,7 +4,11 @@ export const cavalos = [
     "nomeFantasia": "Foguete",
     "idade": 7,
     "peso": 300,
-    "vaquejadas": 80
+    "vaquejadas": 80,
+    "haras":"Paraiso",
+    "vitorias": 1,
+    "nomeVaqueiro": "",
+    "campeao": 0,
   },
 
   {
@@ -12,7 +16,11 @@ export const cavalos = [
     "nomeFantasia": "Estrela Cadente",
     "idade": 16,
     "peso": 260,
-    "vaquejadas": 28
+    "vaquejadas": 28,
+    "haras":"Paraiso",
+    "vitorias": 1,
+    "nomeVaqueiro": "",
+    "campeao": 0
   },
 
   {
@@ -20,7 +28,11 @@ export const cavalos = [
     "nomeFantasia": "Muriel",
     "idade": 4,
     "peso": 282,
-    "vaquejadas": 4
+    "vaquejadas": 4,
+    "haras":"Paraiso",
+    "vitorias": 1,
+    "nomeVaqueiro": "",
+    "campeao": 0
   },
 
   {
@@ -28,7 +40,11 @@ export const cavalos = [
     "nomeFantasia": "Morry",
     "idade": 7,
     "peso": 276,
-    "vaquejadas": 9
+    "vaquejadas": 9,
+    "haras":"Paraiso",
+    "vitorias": 1,
+    "nomeVaqueiro": "",
+    "campeao": 0
   },
 
   {
@@ -36,7 +52,11 @@ export const cavalos = [
     "nomeFantasia": "maculele",
     "idade": 10,
     "peso": 293,
-    "vaquejadas": 15
+    "vaquejadas": 15,
+    "haras":"Paraiso",
+    "vitorias": 1,
+    "nomeVaqueiro": "",
+    "campeao": 0
   },
 
   {
@@ -44,7 +64,11 @@ export const cavalos = [
     "nomeFantasia": "Capa Preta",
     "idade": 13,
     "peso": 298,
-    "vaquejadas": 18
+    "vaquejadas": 18,
+    "haras":"Paraiso",
+    "vitorias": 1,
+    "nomeVaqueiro": "",
+    "campeao": 0
   },
 
   {
@@ -52,7 +76,11 @@ export const cavalos = [
     "nomeFantasia": "Neilton",
     "idade": 6,
     "peso": 262,
-    "vaquejadas": 16
+    "vaquejadas": 16,
+    "haras":"Paraiso",
+    "vitorias": 1,
+    "nomeVaqueiro": "",
+    "campeao": 0
   },
 
   {
@@ -60,7 +88,11 @@ export const cavalos = [
     "nomeFantasia": "Jovi",
     "idade": 8,
     "peso": 257,
-    "vaquejadas": 30
+    "vaquejadas": 30,
+    "haras":"Paraiso",
+    "vitorias": 1,
+    "nomeVaqueiro": "",
+    "campeao": 0
   },
 
   {
@@ -68,7 +100,11 @@ export const cavalos = [
     "nomeFantasia": "Biden",
     "idade": 5,
     "peso": 291,
-    "vaquejadas": 7
+    "vaquejadas": 7,
+    "haras":"Paraiso",
+    "vitorias": 1,
+    "nomeVaqueiro": "",
+    "campeao": 0,
   },
 
   {
@@ -76,6 +112,10 @@ export const cavalos = [
     "nomeFantasia": "Lene",
     "idade": 3,
     "peso": 255,
-    "vaquejadas": 2
+    "vaquejadas": 7,
+    "haras":"Paraiso",
+    "vitorias": 4,
+    "nomeVaqueiro": "",
+    "campeao": 0,
   }
 ]
