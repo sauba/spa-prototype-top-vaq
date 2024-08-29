@@ -17,9 +17,7 @@ export default function Horses() {
         font-pt-mono
       `} id="horses">
       <Image src={`/caracavalo.png`} width={600} height={600} alt="TOP-VAC" className={`cursor-none mx-auto`} priority />
-      <p className={`px-4 lg:px-24 text-center text-lg xl:text-xl 2xl:text-2xl tracking-wider`}>
-        Cavalos
-      </p>
+      
     </div>
   )
 }
