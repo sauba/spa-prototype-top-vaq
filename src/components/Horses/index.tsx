@@ -17,7 +17,7 @@ export default function Horses() {
         font-pt-mono
       `} id="horses">
       <Image src={`/caracavalo.png`} width={600} height={600} alt="TOP-VAC" className={`cursor-none mx-auto`} priority />
-      
+
     </div>
   )
 }
