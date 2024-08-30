@@ -19,7 +19,7 @@ import { Dispatch, SetStateAction } from "react";
 interface Item {
   name: string;
   nomeFantasia: string;
-  idade: string;
+  idade: number;
   peso: number;
   vaquejadas: number;
 }
