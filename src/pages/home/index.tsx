@@ -1,8 +1,6 @@
 import Bull from "@/components/Bull";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import Horses from "@/components/Horse";
-import Cowboy from "@/components/Vaqueiro";
 import { bois } from "@/utils/bois";
 
 import { haras } from "@/utils/haras";
@@ -20,8 +18,6 @@ export default function Home() {
       <Header />
       <Image src={`/logo.svg`} width={300} height={300} alt="" className={`mx-auto pb-16`} />
       <Bull />
-      <Horses />
-      <Cowboy />
       <Footer />
     </div>
   )
