@@ -19,13 +19,13 @@ import {
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
-interface Item {
-  name: string;
-  nomeFantasia: string
-  idade: number
-  peso: number
-  vaquejadas: number
-}
+// interface Item {
+//   name: string;
+//   nomeFantasia: string
+//   idade: number
+//   peso: number
+//   vaquejadas: number
+// }
 
 export default function Bull() {
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -107,7 +107,7 @@ export default function Bull() {
                     <EditIcon
                       fontSize={20}
                       onClick={() => [
-                        setDataEdit({ name, nomeFantasia, idade, peso, vaquejadas }),
+                        setDataEdit({ name, nomeFantasia, idade, peso, vaquejadas, index }),
                         onOpen()
                       ]}
                     />
