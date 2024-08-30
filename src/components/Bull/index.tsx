@@ -17,9 +17,17 @@ import {
 } from "@chakra-ui/react"
 import { useEffect, useState } from "react"
 
+interface Item {
+  name: string;
+  nomeFantasia: string
+  idade: number
+  peso: number
+  vaquejadas: number
+}
+
 export default function Bull() {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const [data, setData] = useState([])
+  const [data, setData] = useState<Item[]>([])
   const [dataEdit, setDataEdit] = useState({})
 
   const isMobile = useBreakpointValue({
