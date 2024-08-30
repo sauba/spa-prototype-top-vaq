@@ -1,6 +1,6 @@
 'use client'
 // src/components/Bull/index.tsx
-import { Item } from '@/utils/types';
+// import { Item } from '@/utils/types';
 
 import BullCrud from "@/components/BullCrud";
 import { DeleteIcon, EditIcon } from "@chakra-ui/icons";
