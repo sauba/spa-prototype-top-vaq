@@ -1,6 +1,5 @@
 'use client'
-// src/components/Bull/index.tsx
-// import { Item } from '@/utils/types';
+import { Item as GlobalItem } from '@/utils/types';
 
 import BullCrud from "@/components/BullCrud";
 import { DeleteIcon, EditIcon } from "@chakra-ui/icons";
@@ -19,7 +18,7 @@ import {
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
-interface Item {
+interface LocalItem {
   name: string;
   nomeFantasia: string
   idade: number
@@ -29,14 +28,13 @@ interface Item {
 
 export default function Bull() {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const [data, setData] = useState<Item[]>([])
-
-  const [dataEdit, setDataEdit] = useState<Item>({
+  const [data, setData] = useState<GlobalItem[]>([])
+  const [dataEdit, setDataEdit] = useState<GlobalItem>({
     name: '',
     nomeFantasia: '',
     idade: 3,
-    peso: 0, // Default value
-    vaquejadas: 0, // Default value
+    peso: 0,
+    vaquejadas: 0,
   });
 
 
@@ -47,7 +45,7 @@ export default function Bull() {
 
   useEffect(() => {
     const item = localStorage.getItem("CRUD_BOI");
-    const db_boi = item ? JSON.parse(item) as Item[] : [];
+    const db_boi = item ? JSON.parse(item) as LocalItem[] : [];
     setData(db_boi);
   }, []);
 

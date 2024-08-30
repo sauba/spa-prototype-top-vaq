@@ -36,10 +36,9 @@ export const BullCrud: React.FC<BullCrudProps> = ({
 }) => {
   const [name, setName] = useState(dataEdit.name || "");
   const [nomeFantasia, setNomeFantasia] = useState(dataEdit.nomeFantasia || "");
-  const [idade, setIdade] = useState(dataEdit.idade || "");
-  const [peso, setPeso] = useState(dataEdit.peso || "")
-  const [vaquejadas, setVaquejadas] = useState(dataEdit.vaquejadas || "")
-
+  const [idade, setIdade] = useState(dataEdit.idade || 0);
+  const [peso, setPeso] = useState(dataEdit.peso || 0)
+  const [vaquejadas, setVaquejadas] = useState(dataEdit.vaquejadas || 0)
 
   const handleSave = () => {
     if (!name || !nomeFantasia || !idade || !peso || !vaquejadas) return
