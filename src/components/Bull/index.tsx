@@ -101,7 +101,7 @@ export default function Bull() {
                   <Td textAlign={"center"} fontSize={20}>{name}</Td>
                   <Td textAlign={"center"} fontSize={20}>{nomeFantasia}</Td>
                   <Td textAlign={"center"} fontSize={20}>{idade}</Td>
-                  <Td textAlign={"center"} fontSize={20}>{peso}</Td>
+                  <Td textAlign={"center"} fontSize={20}>{peso}kg</Td>
                   <Td textAlign={"center"} fontSize={20}>{vaquejadas}</Td>
                   <Td px={4}>
                     <EditIcon
