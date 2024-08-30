@@ -37,7 +37,7 @@ export default function Bull() {
 
   useEffect(() => {
     const item = localStorage.getItem("CRUD_BOI");
-    const db_boi = item ? JSON.parse(item) : [];
+    const db_boi = item ? JSON.parse(item) as Item[] : [];
     setData(db_boi);
   }, []);
 
