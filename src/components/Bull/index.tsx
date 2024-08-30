@@ -28,12 +28,10 @@ export default function Bull() {
   })
 
   useEffect(() => {
-    const db_boi = localStorage.getItem("CRUD_BOI")
-      ? JSON.parse(localStorage.getItem("CRUD_BOI"))
-      : []
-
-    setData(db_boi)
-  }, [setData])
+    const item = localStorage.getItem("CRUD_BOI");
+    const db_boi = item ? JSON.parse(item) : [];
+    setData(db_boi);
+  }, []);
 
   const handleRemove = (name) => {
     const newArray = data.filter((item) => item.name !== name)
