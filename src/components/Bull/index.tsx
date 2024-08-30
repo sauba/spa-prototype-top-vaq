@@ -1,7 +1,9 @@
 'use client'
+// src/components/Bull/index.tsx
+import { Item } from '@/utils/types';
 
-import BullCrud from "@/components/BullCrud"
-import { DeleteIcon, EditIcon } from "@chakra-ui/icons"
+import BullCrud from "@/components/BullCrud";
+import { DeleteIcon, EditIcon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
@@ -14,8 +16,8 @@ import {
   Tr,
   useBreakpointValue,
   useDisclosure
-} from "@chakra-ui/react"
-import { useEffect, useState } from "react"
+} from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 
 interface Item {
   name: string;
@@ -28,7 +30,15 @@ interface Item {
 export default function Bull() {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [data, setData] = useState<Item[]>([])
-  const [dataEdit, setDataEdit] = useState({})
+
+  const [dataEdit, setDataEdit] = useState<Item>({
+    name: '',
+    nomeFantasia: '',
+    idade: 3,
+    peso: 0, // Default value
+    vaquejadas: 0, // Default value
+  });
+
 
   const isMobile = useBreakpointValue({
     base: true,

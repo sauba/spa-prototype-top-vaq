@@ -7,7 +7,7 @@ export default function Session() {
     <div className={`w-full h-screen mx-auto flex flex-col justify-center items-center bg-amber-950 text-zinc-100 font-pt-mono`}>
       <Header />
 
-      <Image src={`/logo.svg`} width={300} height={300} alt="" className={`mx-auto pb-16`} />
+      <Image src={`/logo.svg`} width={300} height={300} alt="" className={`mx-auto pb-16`} priority />
 
       <p className={`text-center text-2xl`}>Olá, Seja bem-vindo.</p>
       <p className={`text-center text-2xl pb-8`}>Faça o Login para acessar o sistema</p>
