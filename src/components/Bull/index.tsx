@@ -33,11 +33,11 @@ export default function Bull() {
     setData(db_boi);
   }, []);
 
-  const handleRemove = (name) => {
-    const newArray = data.filter((item) => item.name !== name)
-    setData(newArray)
-    localStorage.setItem("CRUD_BOI", JSON.stringify(newArray))
-  }
+  const handleRemove = (name: string) => {
+    const newArray = data.filter((item) => item.name !== name);
+    setData(newArray);
+    localStorage.setItem("CRUD_BOI", JSON.stringify(newArray));
+  };
 
   return (
     <Flex
