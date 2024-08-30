@@ -1,32 +1,127 @@
-import { bois } from "@/utils/bois"
-import Image from "next/image"
+'use client'
+
+import BullCrud from "@/components/BullCrud"
+import { DeleteIcon, EditIcon } from "@chakra-ui/icons"
+import {
+  Box,
+  Button,
+  Flex,
+  Table,
+  Tbody,
+  Td,
+  Th,
+  Thead,
+  Tr,
+  useBreakpointValue,
+  useDisclosure
+} from "@chakra-ui/react"
+import { useEffect, useState } from "react"
+
 import Header from "../Header"
 
 export default function Bull() {
-  const boisList = bois
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const [data, setData] = useState([])
+  const [dataEdit, setDataEdit] = useState({})
+
+  const isMobile = useBreakpointValue({
+    base: true,
+    lg: false
+  })
+
+  useEffect(() => {
+    const db_boi = localStorage.getItem("CRUD_BOI")
+      ? JSON.parse(localStorage.getItem("CRUD_BOI"))
+      : []
+
+    setData(db_boi)
+  }, [setData])
+
+  const handleRemove = (name) => {
+    const newArray = data.filter((item) => item.name !== name)
+
+    setData(newArray)
+
+    localStorage.setItem("CRUD_BOI", JSON.stringify(newArray))
+  }
 
   return (
-    <div className={`bois w-full min-h-screen mx-auto flex flex-col justify-center items-center bg-amber-950 text-zinc-100 font-pt-mono`} id="bois">
+    <>
       <Header />
 
-      <div className={`w-full flex-col pb-12`}>
-        <h1 className={`text-center text-3xl xl:text-8xl pt-32 pb-4 font-allura`}>Bois</h1>
+      <Flex
+        h="100vh"
+        align={"center"}
+        justify={"center"}
+        fontSize={"20px"}
+        fontFamily={"fantasy"}
+      >
+        <Box maxW={800} w={"100%"} h={"100vh"} py={10} px={2}>
+          <Button colorScheme="blue" onClick={() => [setDataEdit({}), onOpen()]}>
+            Novo Cadastro
+          </Button>
 
-        <div className={`w-full grid grid-cols-2 xl:grid-cols-5 justify-center items-center gap-1`}>
-          {
-            boisList.map((boi, index) => (
-              <div key={index} className={`w-full h-96 rounded-lg card bg-gradient-to-bl from-amber-400 to-amber-700 to-70% p-4 mx-auto`}>
-                <Image src={`/boiPerfil.png`} width={96} height={96} alt="" className={`mx-auto hover:transition-transform hover:scale-125 hover:py-4`} />
-                <p>Nome: {boi.nome}</p>
-                <p>Apelido: {boi.nomeFantasia}</p>
-                <p>Idade: {boi.idade}</p>
-                <p>Peso: {boi.peso}</p>
-                <p>Vaquejadas: {boi.vaquejadas}</p>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    </div>
+          <Box overflowY={"auto"} height={"100%"}>
+            <Table mt={6}>
+              <Thead>
+                <Tr>
+                  <Th maxW={isMobile ? 5 : 100} fontSize={"20px"}>
+                    Nome
+                  </Th>
+
+                  <Th maxW={isMobile ? 5 : 100} fontSize={"20px"}>
+                    Apelido
+                  </Th>
+
+                  <Th maxW={isMobile ? 5 : 100} fontSize={"20px"}>
+                    Idade
+                  </Th>
+
+                  <Th maxW={isMobile ? 5 : 100} fontSize={"20px"}>
+                    Peso
+                  </Th>
+
+                  <Th maxW={isMobile ? 5 : 100} fontSize={"20px"}>
+                    Vaquejadas
+                  </Th>
+
+                  <Th p={0}></Th>
+                  <Th p={0}></Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                {data.map(({ name, nomeFantasia, idade, peso, vaquejadas }, index) => (
+                  <Tr key={index} cursor={"pointer"} _hover={{ bg: "gray.100" }}>
+                    <Td maxW={isMobile ? 5 : 100}>{name}</Td>
+                    <Td maxW={isMobile ? 5 : 100}>{nomeFantasia}</Td>
+                    <Td maxW={isMobile ? 5 : 100}>{idade}</Td>
+                    <Td maxW={isMobile ? 5 : 100}>{peso}</Td>
+                    <Td maxW={isMobile ? 5 : 100}>{vaquejadas}</Td>
+                    <Td p={0}>
+                      <EditIcon
+                        fontSize={20}
+                        onClick={() => [
+                          setDataEdit({ name, nomeFantasia, idade, peso, vaquejadas, index }),
+                          onOpen()
+                        ]}
+                      />
+                    </Td>
+                    <Td p={0}>
+                      <DeleteIcon
+                        fontSize={20}
+                        onClick={() => handleRemove(name)}
+                      />
+                    </Td>
+                  </Tr>
+                ))}
+              </Tbody>
+            </Table>
+          </Box>
+        </Box>
+        {isOpen && (
+          <BullCrud isOpen={isOpen} onClose={onClose} data={data} setData={setData} dataEdit={dataEdit} setDataEdit={setDataEdit} />
+        )}
+      </Flex>
+    </>
   )
 }
