@@ -1,36 +1,165 @@
-import { cavalos } from "@/utils/cavalos"
-import Image from "next/image"
-import Header from "../Header"
+'use client'
 
-export default function Horses() {
-  const cavalosList = cavalos
+import { CowboyItem } from '@/utils/types';
+import { DeleteIcon, EditIcon } from "@chakra-ui/icons";
+import {
+  Box,
+  Button,
+  Flex,
+  Table,
+  Tbody,
+  Td,
+  Th,
+  Thead,
+  Tr,
+  useBreakpointValue,
+  useDisclosure
+} from "@chakra-ui/react";
+import { UserCircle } from '@phosphor-icons/react';
+import { useEffect, useState } from "react";
+import HorseCrud from '../HorseCrud';
+
+interface LocalItem {
+  name: string;
+  nomeFantasia: string
+  idade: number
+  peso: number
+  estado: string
+  vaquejadas: number
+  vitorias: number
+  nomeAssistente: string
+  campeao: number
+  odds: number
+}
+
+export default function Horse() {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const [data, setData] = useState<CowboyItem[]>([])
+  const [dataEdit, setDataEdit] = useState<CowboyItem>({
+    name: '',
+    nomeFantasia: '',
+    idade: 3,
+    peso: 0,
+    estado: '',
+    vaquejadas: 0,
+    vitorias: 0,
+    nomeAssistente: '',
+    campeao: 0,
+    odds: 0
+  });
+
+
+  const isMobile = useBreakpointValue({
+    base: true,
+    lg: false
+  })
+
+  useEffect(() => {
+    const item = localStorage.getItem("CRUD_CAVALO");
+    const db_cavalo = item ? JSON.parse(item) as LocalItem[] : [];
+    setData(db_cavalo);
+  }, []);
+
+  const handleRemove = (name: string) => {
+    const newArray = data.filter((item) => item.name !== name);
+    setData(newArray);
+    localStorage.setItem("CRUD_VAQUEIRO", JSON.stringify(newArray));
+  };
 
   return (
-    <div className={`cavalos w-full min-h-screen mx-auto flex flex-col justify-center items-center bg-amber-950 text-zinc-100 font-pt-mono`} id="cavalos">
-      <Header />
+    <Flex
+      h="100vh"
+      align={"center"}
+      justify={"center"}
+      fontSize={"20px"}
+      fontFamily={"fantasy"}
+      className={`w-full`}
+    >
+      <Box w={"100%"} h={"100vh"} py={10} px={2}>
+        <span className={`w-full flex justify-center items-center gap-1`}>
+          <UserCircle size={32} weight='duotone' />
+          <h1 className={`text-center font-caveat lg:text-5xl 3xl:text-8xl`}>Cavalos Cadastrados no sistema</h1>
+        </span>
 
-      <div className={`w-full flex-col pb-12`}>
-        <h1 className={`text-center text-3xl xl:text-8xl pt-32 pb-4 font-allura`}>Cavalos</h1>
+        <Button colorScheme="blue" onClick={() => [setDataEdit({}), onOpen()]}>
+          Cadastrar Vaqueiro
+        </Button>
 
-        <div className={`w-full grid grid-cols-2 xl:grid-cols-5 justify-center items-center gap-1`}>
-          {
-            cavalosList.map((cavalo, index) => (
-              <div key={index} className={`w-full h-96 rounded-lg card bg-gradient-to-bl from-amber-400 to-amber-700 to-70% p-4 mx-auto`}>
-                <Image src={`/caracavalo.png`} width={96} height={96} alt="" className={`mx-auto hover:transition-transform hover:scale-125 hover:py-4`} />
-                <p>Nome: {cavalo.nome}</p>
-                <p>Apelido: {cavalo.nomeFantasia}</p>
-                <p>Idade: {cavalo.idade}</p>
-                <p>Peso: {cavalo.peso}</p>
-                <p>Haras: {cavalo.haras}</p>
-                <p>Vaquejadas: {cavalo.vaquejadas}</p>
-                <p>Vitórias: {cavalo.vitorias}</p>
-                <p>Vaqueiro Corredor: {cavalo.nomeVaqueiro}</p>
-                <p>Campeão: {cavalo.campeao}</p>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    </div>
+        <Box overflowY={"auto"} height={"100%"} mt={6}>
+          <Table variant="simple" size="sm">
+            <Thead>
+              <Tr>
+                <Th w={isMobile ? "10%" : "20%"} fontSize={20} textAlign={"center"}>
+                  Nome
+                </Th>
+                <Th w={isMobile ? "10%" : "20%"} fontSize={20} textAlign={"center"}>
+                  Apelido
+                </Th>
+                <Th w={isMobile ? "10%" : "20%"} fontSize={20} textAlign={"center"}>
+                  Idade
+                </Th>
+                <Th w={isMobile ? "10%" : "20%"} fontSize={20} textAlign={"center"}>
+                  Peso
+                </Th>
+                <Th w={isMobile ? "10%" : "20%"} fontSize={20} textAlign={"center"}>
+                  Estado
+                </Th>
+                <Th w={isMobile ? "10%" : "20%"} fontSize={20} textAlign={"center"}>
+                  Vaquejadas
+                </Th>
+                <Th w={isMobile ? "10%" : "20%"} fontSize={20} textAlign={"center"}>
+                  Vitórias
+                </Th>
+                <Th w={isMobile ? "10%" : "20%"} fontSize={20} textAlign={"center"}>
+                  Assistente
+                </Th>
+                <Th w={isMobile ? "10%" : "20%"} fontSize={20} textAlign={"center"}>
+                  Campeão
+                </Th>
+                <Th w={isMobile ? "10%" : "20%"} fontSize={20} textAlign={"center"}>
+                  Odds
+                </Th>
+                <Th p={0} w={isMobile ? "5%" : "10%"}></Th>
+                <Th p={0} w={isMobile ? "5%" : "10%"}></Th>
+              </Tr>
+            </Thead>
+            <Tbody>
+              {data.map(({ name, nomeFantasia, idade, peso, estado, vaquejadas, vitorias, nomeAssistente, campeao, odds }, index) => (
+                <Tr key={index} cursor={"pointer"} _hover={{ bg: "amber.500" }}>
+                  <Td textAlign={"center"} fontSize={20}>{name}</Td>
+                  <Td textAlign={"center"} fontSize={20}>{nomeFantasia}</Td>
+                  <Td textAlign={"center"} fontSize={20}>{idade}</Td>
+                  <Td textAlign={"center"} fontSize={20}>{peso}kg</Td>
+                  <Td textAlign={"center"} fontSize={20}>{estado}</Td>
+                  <Td textAlign={"center"} fontSize={20}>{vaquejadas}</Td>
+                  <Td textAlign={"center"} fontSize={20}>{vitorias}</Td>
+                  <Td textAlign={"center"} fontSize={20}>{nomeAssistente}</Td>
+                  <Td textAlign={"center"} fontSize={20}>{campeao}</Td>
+                  <Td textAlign={"center"} fontSize={20}>{odds}</Td>
+                  <Td px={4}>
+                    <EditIcon
+                      fontSize={20}
+                      onClick={() => [
+                        setDataEdit({ name, nomeFantasia, idade, peso, estado, vaquejadas, vitorias, nomeAssistente, campeao, odds, index }),
+                        onOpen()
+                      ]}
+                    />
+                  </Td>
+                  <Td px={4}>
+                    <DeleteIcon
+                      fontSize={20}
+                      onClick={() => handleRemove(name)}
+                    />
+                  </Td>
+                </Tr>
+              ))}
+            </Tbody>
+          </Table>
+        </Box>
+      </Box>
+      {isOpen && (
+        <HorseCrud isOpen={isOpen} onClose={onClose} data={data} setData={setData} dataEdit={dataEdit} setDataEdit={setDataEdit} />
+      )}
+    </Flex>
   )
 }
