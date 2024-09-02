@@ -4,6 +4,7 @@ export default function About() {
   return (
     <div className={`
         w-full
+        min-h-screen
         py-14
         about
         flex
@@ -16,10 +17,7 @@ export default function About() {
         text-zinc-100
         font-pt-mono
       `} id="about">
-      <Image src={`/logo.svg`} width={300} height={300} alt="TOP-VAC" className={`pt-8 cursor-none mx-auto animate-surf-skew`} priority />
-      <p className={`px-4 lg:px-24 text-center text-lg xl:text-xl 2xl:text-2xl tracking-wider`}>
-        TOP-VAQ
-      </p>
+      <Image src={`/logo.svg`} width={480} height={480} alt="" className={`xl:w-2/5 mx-auto pb-16`} priority />
     </div>
   )
 }

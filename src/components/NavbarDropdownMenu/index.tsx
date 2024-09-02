@@ -79,7 +79,7 @@ export default function NavbarDropdownMenu() {
                          `}
                       >
                         <Link
-                          href="#bois"
+                          href="/bois"
                           className={`
                              flex
                              items-center

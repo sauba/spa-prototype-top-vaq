@@ -46,10 +46,9 @@ const config = {
         'lobster': ['Lobster', 'sans-serif'],
       },
       backgroundImage: {
-        "fundo-teste": "url('/logo.svg')",
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-        "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",  
+        "cavalos": "url('/cavalos.svg')",
+        "bois": "url('/bois.svg')",
+        "vaqueiros": "url('/vaqueiros.svg')",
       },
       animation: {
         typewriter: "typewriter 2s steps(14) forwards",

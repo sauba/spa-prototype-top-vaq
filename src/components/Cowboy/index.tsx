@@ -71,21 +71,21 @@ export default function Cowboy() {
       h="100vh"
       align={"center"}
       justify={"center"}
-      fontSize={"20px"}
+      fontSize={"12px"}
       fontFamily={"fantasy"}
       className={`w-full`}
     >
       <Box w={"100%"} h={"100vh"} py={10} px={2}>
         <span className={`w-full flex justify-center items-center gap-1`}>
           <UserCircle size={32} weight='duotone' />
-          <h1 className={`text-center font-caveat lg:text-5xl 3xl:text-8xl`}>Vaqueiros Cadastrados no sistema</h1>
+          <h1 className={`text-center font-caveat text-4xl 3xl:text-8xl`}>Vaqueiros Cadastrados no sistema</h1>
         </span>
 
         <Button colorScheme="blue" onClick={() => [setDataEdit({}), onOpen()]}>
           Cadastrar Vaqueiro
         </Button>
 
-        <Box overflowY={"auto"} height={"100%"} mt={6}>
+        <Box overflowY={"auto"} mt={6} bgColor={'ivory'}>
           <Table variant="simple" size="sm">
             <Thead>
               <Tr>
@@ -125,7 +125,7 @@ export default function Cowboy() {
             </Thead>
             <Tbody>
               {data.map(({ name, nomeFantasia, idade, peso, estado, vaquejadas, vitorias, nomeAssistente, campeao, odds }, index) => (
-                <Tr key={index} cursor={"pointer"} _hover={{ bg: "amber.500" }}>
+                <Tr key={index} cursor={"pointer"} color={"black"} _hover={{ bg: "amber.500" }}>
                   <Td textAlign={"center"} fontSize={20}>{name}</Td>
                   <Td textAlign={"center"} fontSize={20}>{nomeFantasia}</Td>
                   <Td textAlign={"center"} fontSize={20}>{idade}</Td>

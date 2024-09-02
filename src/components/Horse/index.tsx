@@ -1,6 +1,6 @@
 'use client'
 
-import { CowboyItem } from '@/utils/types';
+import { HorseItem } from '@/utils/types';
 import { DeleteIcon, EditIcon } from "@chakra-ui/icons";
 import {
   Box,
@@ -24,28 +24,27 @@ interface LocalItem {
   nomeFantasia: string
   idade: number
   peso: number
-  estado: string
+  haras: string
   vaquejadas: number
   vitorias: number
-  nomeAssistente: string
+  nomeVaqueiro: string
   campeao: number
   odds: number
 }
 
 export default function Horse() {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const [data, setData] = useState<CowboyItem[]>([])
-  const [dataEdit, setDataEdit] = useState<CowboyItem>({
+  const [data, setData] = useState<HorseItem[]>([])
+  const [dataEdit, setDataEdit] = useState<HorseItem>({
     name: '',
     nomeFantasia: '',
     idade: 3,
     peso: 0,
-    estado: '',
+    haras: '',
     vaquejadas: 0,
     vitorias: 0,
-    nomeAssistente: '',
-    campeao: 0,
-    odds: 0
+    nomeVaqueiro: '',
+    campeao: 0
   });
 
 
@@ -63,7 +62,7 @@ export default function Horse() {
   const handleRemove = (name: string) => {
     const newArray = data.filter((item) => item.name !== name);
     setData(newArray);
-    localStorage.setItem("CRUD_VAQUEIRO", JSON.stringify(newArray));
+    localStorage.setItem("CRUD_CAVALO", JSON.stringify(newArray));
   };
 
   return (
@@ -75,17 +74,17 @@ export default function Horse() {
       fontFamily={"fantasy"}
       className={`w-full`}
     >
-      <Box w={"100%"} h={"100vh"} py={10} px={2}>
+      <Box w={"100%"} py={10} px={2}>
         <span className={`w-full flex justify-center items-center gap-1`}>
           <UserCircle size={32} weight='duotone' />
-          <h1 className={`text-center font-caveat lg:text-5xl 3xl:text-8xl`}>Cavalos Cadastrados no sistema</h1>
+          <h1 className={`text-center font-caveat text-4xl 3xl:text-8xl`}>Cavalos Cadastrados no sistema</h1>
         </span>
 
         <Button colorScheme="blue" onClick={() => [setDataEdit({}), onOpen()]}>
-          Cadastrar Vaqueiro
+          Cadastrar Cavalo
         </Button>
 
-        <Box overflowY={"auto"} height={"100%"} mt={6}>
+        <Box overflowY={"auto"} height={"100%"} mt={6} bgColor={"ivory"}>
           <Table variant="simple" size="sm">
             <Thead>
               <Tr>
@@ -102,7 +101,7 @@ export default function Horse() {
                   Peso
                 </Th>
                 <Th w={isMobile ? "10%" : "20%"} fontSize={20} textAlign={"center"}>
-                  Estado
+                  Haras
                 </Th>
                 <Th w={isMobile ? "10%" : "20%"} fontSize={20} textAlign={"center"}>
                   Vaquejadas
@@ -111,36 +110,33 @@ export default function Horse() {
                   Vitórias
                 </Th>
                 <Th w={isMobile ? "10%" : "20%"} fontSize={20} textAlign={"center"}>
-                  Assistente
+                  Vaqueiro
                 </Th>
                 <Th w={isMobile ? "10%" : "20%"} fontSize={20} textAlign={"center"}>
                   Campeão
                 </Th>
-                <Th w={isMobile ? "10%" : "20%"} fontSize={20} textAlign={"center"}>
-                  Odds
-                </Th>
+
                 <Th p={0} w={isMobile ? "5%" : "10%"}></Th>
                 <Th p={0} w={isMobile ? "5%" : "10%"}></Th>
               </Tr>
             </Thead>
             <Tbody>
-              {data.map(({ name, nomeFantasia, idade, peso, estado, vaquejadas, vitorias, nomeAssistente, campeao, odds }, index) => (
-                <Tr key={index} cursor={"pointer"} _hover={{ bg: "amber.500" }}>
+              {data.map(({ name, nomeFantasia, idade, peso, haras, vaquejadas, vitorias, nomeVaqueiro, campeao }, index) => (
+                <Tr key={index} cursor={"pointer"} color={"black"} _hover={{ bg: "amber.500" }}>
                   <Td textAlign={"center"} fontSize={20}>{name}</Td>
                   <Td textAlign={"center"} fontSize={20}>{nomeFantasia}</Td>
                   <Td textAlign={"center"} fontSize={20}>{idade}</Td>
                   <Td textAlign={"center"} fontSize={20}>{peso}kg</Td>
-                  <Td textAlign={"center"} fontSize={20}>{estado}</Td>
+                  <Td textAlign={"center"} fontSize={20}>{haras}</Td>
                   <Td textAlign={"center"} fontSize={20}>{vaquejadas}</Td>
                   <Td textAlign={"center"} fontSize={20}>{vitorias}</Td>
-                  <Td textAlign={"center"} fontSize={20}>{nomeAssistente}</Td>
+                  <Td textAlign={"center"} fontSize={20}>{nomeVaqueiro}</Td>
                   <Td textAlign={"center"} fontSize={20}>{campeao}</Td>
-                  <Td textAlign={"center"} fontSize={20}>{odds}</Td>
                   <Td px={4}>
                     <EditIcon
                       fontSize={20}
                       onClick={() => [
-                        setDataEdit({ name, nomeFantasia, idade, peso, estado, vaquejadas, vitorias, nomeAssistente, campeao, odds, index }),
+                        setDataEdit({ name, nomeFantasia, idade, peso, haras, vaquejadas, vitorias, nomeVaqueiro, campeao, index }),
                         onOpen()
                       ]}
                     />

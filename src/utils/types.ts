@@ -28,7 +28,7 @@ export interface HorseItem {
   peso: number;
   haras: string;
   vaquejadas: number;
-  vitorias: string;
+  vitorias: number;
   nomeVaqueiro: string;
   campeao: number;
 }

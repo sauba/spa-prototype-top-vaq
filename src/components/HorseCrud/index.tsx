@@ -41,23 +41,22 @@ export const HorseCrud: React.FC<HorseCrudProps> = ({
   const [haras, setHaras] = useState(dataEdit.haras || "")
   const [vaquejadas, setVaquejadas] = useState(dataEdit.vaquejadas || 0)
   const [vitorias, setVitorias] = useState(dataEdit.vitorias || 0)
-  const [nomeAssistente, setNomeAssistente] = useState(dataEdit.nomeAssistente || "")
+  const [nomeVaqueiro, setNomeVaqueiro] = useState(dataEdit.nomeVaqueiro || "")
   const [campeao, setCampeao] = useState(dataEdit.campeao || 0)
-  const [odds, setOdds] = useState(dataEdit.odds || 0)
 
   const handleSave = () => {
-    if (!name || !nomeFantasia || !idade || !peso || !haras || !vaquejadas || !vitorias || !campeao || !odds) return
+    if (!name || !nomeFantasia || !idade || !peso || !haras || !vaquejadas || !vitorias || !campeao) return
 
     if (HorseAlreadyExists()) {
       return alert("Vaqueiro já registrado!")
     }
 
     if (Object.keys(dataEdit).length) {
-      data[dataEdit.index] = { name, nomeFantasia, idade, peso, estado, vaquejadas, vitorias, nomeAssistente, campeao, odds }
+      data[dataEdit.index] = { name, nomeFantasia, idade, peso, haras, vaquejadas, vitorias, nomeVaqueiro, campeao }
     }
 
     const newDataArray = !Object.keys(dataEdit).length
-      ? [...(data ? data : []), { name, nomeFantasia, idade, peso, estado, vaquejadas, vitorias, nomeAssistente, campeao, odds }]
+      ? [...(data ? data : []), { name, nomeFantasia, idade, peso, haras, vaquejadas, vitorias, nomeVaqueiro, campeao }]
       : [...(data ? data : [])]
 
     localStorage.setItem("CRUD_VAQUEIRO", JSON.stringify(newDataArray))
@@ -79,7 +78,7 @@ export const HorseCrud: React.FC<HorseCrudProps> = ({
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader className={`text-center`}>CRUD de Vaqueiros</ModalHeader>
+        <ModalHeader className={`text-center`}>CRUD de Cavalos</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
           <FormControl display={"flex"} flexDir={"column"} gap={4}>
@@ -104,8 +103,8 @@ export const HorseCrud: React.FC<HorseCrudProps> = ({
             </Box>
 
             <Box>
-              <FormLabel>Estado</FormLabel>
-              <Input type="text" value={estado} onChange={(e) => setEstado(e.target.value)} required />
+              <FormLabel>haras</FormLabel>
+              <Input type="text" value={haras} onChange={(e) => setHaras(e.target.value)} required />
             </Box>
 
             <Box>
@@ -119,18 +118,13 @@ export const HorseCrud: React.FC<HorseCrudProps> = ({
             </Box>
 
             <Box>
-              <FormLabel>Nome do Assistente</FormLabel>
-              <Input type="text" value={nomeAssistente} onChange={(e) => setNomeAssistente(e.target.value)} required />
+              <FormLabel>Nome do Vaqueiro</FormLabel>
+              <Input type="text" value={nomeVaqueiro} onChange={(e) => setNomeVaqueiro(e.target.value)} required />
             </Box>
 
             <Box>
               <FormLabel>Campeão</FormLabel>
               <Input type="number" value={campeao} onChange={(e) => setCampeao(e.target.value)} required />
-            </Box>
-
-            <Box>
-              <FormLabel>Odds</FormLabel>
-              <Input type="number" value={odds} onChange={(e) => setOdds(e.target.value)} required />
             </Box>
 
           </FormControl>
