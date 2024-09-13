@@ -81,7 +81,9 @@ export default function Cowboy() {
           <h1 className={`text-center font-caveat text-4xl 3xl:text-8xl`}>Vaqueiros Cadastrados no sistema</h1>
         </span>
 
-        <Button colorScheme="blue" onClick={() => [setDataEdit({}), onOpen()]}>
+        <Button colorScheme="blue" onClick={() => [setDataEdit({
+          name: ''
+        }), onOpen()]}>
           Cadastrar Vaqueiro
         </Button>
 

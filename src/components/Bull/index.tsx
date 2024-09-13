@@ -71,7 +71,13 @@ export default function Bull() {
           <h1 className={`text-center font-caveat text-4xl 3xl:text-8xl`}>Bois Cadastrados no sistema</h1>
         </span>
 
-        <Button colorScheme="blue" onClick={() => [setDataEdit({}), onOpen()]}>
+        <Button colorScheme="blue" onClick={() => [setDataEdit({
+          name: dataEdit.name,
+          nomeFantasia: dataEdit.nomeFantasia,
+          idade: dataEdit.idade,
+          peso: dataEdit.peso,
+          vaquejadas: dataEdit.vaquejadas,
+        }), onOpen()]}>
           Cadastrar Boi
         </Button>
 
