@@ -153,6 +153,10 @@ const config = {
         "own-roxo": "#9B5B7D",
         "own-pink": "#B36372",
         "own-blueberry": "#6B7A8F",
+
+        "own-topvaq-bg-gray": "#3b4f66",
+        "own-topvaq-title": "#9bd66d",
+        "own-topvaq-p": "#3b4f66"
       }
     },
   },

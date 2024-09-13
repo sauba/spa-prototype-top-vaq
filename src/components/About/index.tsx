@@ -17,7 +17,7 @@ export default function About() {
         text-zinc-100
         font-pt-mono
       `} id="about">
-      <Image src={`/logo.svg`} width={480} height={480} alt="" className={`xl:w-2/5 mx-auto pb-16`} priority />
+      <Image src={`/logotopvaq.svg`} width={480} height={480} alt="" className={`xl:w-2/5 mx-auto pb-16`} priority />
     </div>
   )
 }

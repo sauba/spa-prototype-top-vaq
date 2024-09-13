@@ -14,7 +14,7 @@ export default function NavbarDropdownMenu() {
               <ListBullets
                 size={56}
                 weight="bold"
-                className={`px-2 border-none outline-none hover:cursor-pointer text-zinc-100`}
+                className={`px-2 border-none outline-none hover:cursor-pointer text-own-topvaq-title`}
               />
             </Menu.Button>
 
@@ -28,9 +28,9 @@ export default function NavbarDropdownMenu() {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Menu.Items className=" bg-amber-950 min-h-screen justify-center items-center z-50">
+              <Menu.Items className=" bg-own-topvaq-bg-gray min-h-screen justify-center items-center z-50 text-own-topvaq-title">
                 <div className="w-full flex-col justify-center items-center">
-                  <Image src={`/logo.svg`} width={300} height={300} alt="vaqueiro montado no cavalo derrubando o boi segurando-o pelo rabo" className={`cursor-none mx-auto`} priority />
+                  <Image src={`/logotopvaq.svg`} width={300} height={300} alt="vaqueiro montado no cavalo derrubando o boi segurando-o pelo rabo" className={`cursor-none mx-auto`} priority />
 
                   <Menu.Item>
                     {({ active }) => (
@@ -57,8 +57,8 @@ export default function NavbarDropdownMenu() {
                              xl:text-3xl
                            `}
                         >
-                          <House size={32} weight="bold" className={`text-zinc-100`} />
-                          <p className={`text-zinc-100`}>Início</p>
+                          <House size={32} weight="bold" className={`text-own-topvaq-title`} />
+                          <p className={``}>Início</p>
                         </Link>
                       </div>
                     )}
@@ -73,7 +73,7 @@ export default function NavbarDropdownMenu() {
                            justify-center
                            items-center
                            ${active
-                            ? "bg-amber-800 border-none cursor-pointer text-zinc-100 font-thin hover:rounded-x-2xl hover:xl:text-2xl"
+                            ? "bg-own-topvaq-bg-gray border-none cursor-pointer text-zinc-100 font-thin hover:rounded-x-2xl hover:xl:text-2xl"
                             : "text-zinc-100 font-thin"
                           }
                          `}
@@ -90,7 +90,7 @@ export default function NavbarDropdownMenu() {
                              xl:text-3xl
                            `}
                         >
-                          <Cow size={32} weight="bold" className={`text-zinc-200`} />
+                          <Cow size={32} weight="bold" className={`text-own-topvaq-title`} />
                           <p className={``}>Bois</p>
                         </Link>
                       </div>
@@ -106,7 +106,7 @@ export default function NavbarDropdownMenu() {
                            justify-center
                            items-center
                            ${active
-                            ? "bg-amber-800 border-none cursor-pointer text-zinc-100 font-thin hover:rounded-x-2xl hover:xl:text-2xl"
+                            ? "bg-own-topvaq-bg-gray border-none cursor-pointer text-zinc-100 font-thin hover:rounded-x-2xl hover:xl:text-2xl"
                             : "text-zinc-100 font-thin"
                           }
                          `}
@@ -123,7 +123,7 @@ export default function NavbarDropdownMenu() {
                              xl:text-3xl
                            `}
                         >
-                          <Barn size={32} weight="bold" className={`text-zinc-200`} />
+                          <Barn size={32} weight="bold" className={`text-own-topvaq-title`} />
                           <p className={``}>Haras</p>
                         </Link>
                       </div>
@@ -139,7 +139,7 @@ export default function NavbarDropdownMenu() {
                            justify-center
                            items-center
                            ${active
-                            ? "bg-amber-800 border-none cursor-pointer text-zinc-100 font-thin hover:rounded-x-2xl hover:xl:text-2xl"
+                            ? "bg-own-topvaq-bg-gray border-none cursor-pointer text-zinc-100 font-thin hover:rounded-x-2xl hover:xl:text-2xl"
                             : "text-zinc-100 font-thin"
                           }
                          `}
@@ -156,7 +156,7 @@ export default function NavbarDropdownMenu() {
                              xl:text-3xl
                            `}
                         >
-                          <UserCircle size={32} weight="bold" className={`text-zinc-200`} />
+                          <UserCircle size={32} weight="bold" className={`text-own-topvaq-title`} />
                           <p className={``}>Vaqueiros</p>
                         </Link>
                       </div>
@@ -172,7 +172,7 @@ export default function NavbarDropdownMenu() {
                            justify-center
                            items-center
                            ${active
-                            ? "bg-amber-800 border-none cursor-pointer text-zinc-100 text-center font-thin"
+                            ? "bg-own-topvaq-bg-gray border-none cursor-pointer text-zinc-100 text-center font-thin"
                             : "text-zinc-100 font-thin"
                           }
                          `}
@@ -190,7 +190,7 @@ export default function NavbarDropdownMenu() {
                              xl:text-3xl
                            `}
                         >
-                          <Horse size={32} weight="bold" className={`text-zinc-200`} />
+                          <Horse size={32} weight="bold" className={`text-own-topvaq-title`} />
                           <p className={``}>Cavalos</p>
                         </Link>
                       </div>
@@ -205,7 +205,7 @@ export default function NavbarDropdownMenu() {
                            justify-center
                            items-center
                            ${active
-                            ? "bg-amber-800 border-none cursor-pointer text-zinc-100 font-thin hover:text-zinc-100 hover:rounded-x-2xl"
+                            ? "bg-own-topvaq-bg-gray border-none cursor-pointer text-zinc-100 font-thin hover:text-zinc-100 hover:rounded-x-2xl"
                             : "text-zinc-100 font-thin"
                           }
                          `}
@@ -222,7 +222,7 @@ export default function NavbarDropdownMenu() {
                              xl:text-3xl
                            `}
                         >
-                          <Phone size={32} weight="bold" className={`text-zinc-200`} />
+                          <Phone size={32} weight="bold" className={`text-own-topvaq-title`} />
                           <p className={``}>Contato</p>
                         </Link>
                       </div>
@@ -255,7 +255,7 @@ export default function NavbarDropdownMenu() {
                              xl:text-3xl
                            `}
                         >
-                          <SignIn size={32} weight="bold" className={`text-zinc-200`} />
+                          <SignIn size={32} weight="bold" className={`text-own-topvaq-title`} />
                           <p className={``}>Entrar</p>
                         </Link>
                       </div>
