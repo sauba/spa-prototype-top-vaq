@@ -116,7 +116,7 @@ export default function Bull() {
                     <EditIcon
                       fontSize={20}
                       onClick={() => [
-                        setDataEdit({ name, nomeFantasia, idade, peso, vaquejadas, index }),
+                        setDataEdit({ name, nomeFantasia, idade, peso, vaquejadas }),
                         onOpen()
                       ]}
                     />
